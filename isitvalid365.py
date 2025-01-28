@@ -15,7 +15,8 @@ yellow = Fore.YELLOW
 
 # Define the URL for the API request - https://login.microsoftonline.com/common/GetCredentialType?mkt=en-US
 # It is recommended to use FireProx (https://github.com/ustayready/fireprox) to get the best results
-url = 'https://<fireprox URL>/common/GetCredentialType?mkt=en-US'
+url = 'https://login.microsoftonline.com/common/GetCredentialType?mkt=en-US'
+#url = 'https://<fireprox URL>/common/GetCredentialType?mkt=en-US'
 
 # Set the payload to look normal using an arbitrary flowToken value
 payload_template = {
@@ -30,7 +31,7 @@ payload_template = {
     "isRemoteConnectSupported": False,
     "federationFlags": 0,
     "isSignup": False,
-    "flowToken": ""
+    "flowToken": "",
     "isAccessPassSupported": True,
 }
 
@@ -46,7 +47,6 @@ def process_email(email, valid_email_file):
 
     try:
         response = requests.post(url, json=payload, headers=headers)
-        print("response: ", response.text)
         if response.status_code == 200:
             response_json = response.json()
             if "IfExistsResult" in response_json:
