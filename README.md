@@ -4,3 +4,4 @@ Just another o365 email validator tool with throttling functionality built in. I
 
 ## Usage
 `usage: isitvalid365.py [-h] email_file output_file throttle jiggle`
+![2025-01-28_14-23-11](https://github.com/user-attachments/assets/4fab567b-b105-4fdb-902d-38a72ace62dc)
